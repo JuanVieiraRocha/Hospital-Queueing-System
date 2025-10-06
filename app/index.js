@@ -58,7 +58,6 @@ app.post("/doctors/toggleduty", doctorController.toggleDuty);
 app.get("/doctors/getondutydoctors", doctorController.getOnDutyDoctors);
 app.post("/doctors/nextpatient", doctorController.nextPatient);
 
-// Handle React routing, return all requests to React app
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
