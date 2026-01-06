@@ -13,11 +13,11 @@ const PORT = 3000;
 const helmet = require('helmet');
 const app = express();
 const cors = require('cors');
-const http = require('http');
-const server = require('http').createServer(app);
+const http = require('node:http');
+const server = require('node:http').createServer(app);
 const socketIo = require('socket.io');
 const ioUtil = require('./io/io');
-const path = require('path');
+const path = require('node:path');
 ioUtil.setIo(socketIo(server));
 const io = require('socket.io')(server, {
   cors: {
